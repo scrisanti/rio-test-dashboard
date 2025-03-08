@@ -8,6 +8,7 @@ import rio
 
 from .. import components as comps
 from .. import data_models
+from .. import utils
 
 
 @rio.page(
@@ -68,6 +69,11 @@ class TodoListPage(rio.Component):
             # Status message
             rio.Text(
                 status_text,
+                justify="center",
+            ),
+            # Status message
+            rio.Text(
+                utils.get_api_response.get_resp(),
                 justify="center",
             ),
             # Input for new todo items
